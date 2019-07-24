@@ -1,0 +1,19 @@
+yum install -y git
+mkidr -p ~/.vim/bundle
+cd ~/.vim/bundle
+git clone https://github.com/rkulla/pydiction.git
+##时间长了这个地址很有可能取消，如果找不到这个文件，私我哈
+cp -r ~/.vim/bundle/pydiction/after/ ~/.vim
+vim ~/.vimrc
+#在里面写上以下内容
+filetype plugin on
+let g:pydiction_location = '/root/.vim/bundle/pydiction/complete-dict'
+##########这里敲黑板###########
+###complete-dict这个东西虽然是咱们自己用git下的但是！！
+###我建议还是要用find / -name complete-dict 查找一下他的路径对不对
+let g:pydiction_menu_height = 3
+
+
+上面的一切都搞定以后记得 
+su -l 
+注销一下
